@@ -1,0 +1,169 @@
+<html>
+	<head>
+       <link rel="stylesheet" href="css/main.css">
+       <link rel="stylesheet" href="css/bootstrap.min.css">
+       <link href="https://fonts.googleapis.com/css?family=Pangolin|Roboto|Sansita|Bitter|Sacramento" rel="stylesheet">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+       <script src="js/jquery.nav.js"></script>
+       <script src="js/script.js"></script>
+	</head>
+	<body>
+		<button id="menu-button">&#9776;</button>
+		<nav>
+		  <ul>
+		  <li><a href="#about">About</a>
+		    </li>
+		    <li class="current"><a href="displayCharts">Charts</a>
+		    </li>
+			<li><a href="index_gallery.html">Gallery</a>
+			</li>
+		</ul>
+		</nav>
+		<section id="displayCharts">
+			<h1>Charts</h1>
+		<div class="container">
+  			<div class="row">
+  				<div id="chart_div" class="col-xs-12 col-sm-6">
+  					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis deleniti nostrum cupiditate quos officiis architecto quis odit soluta corporis rerum excepturi quam a et, tempora nulla pariatur ipsa at velit!
+  				</div>
+  				<div id="bar_div" class="col-xs-12 col-sm-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam consectetur ex accusamus aperiam voluptatibus accusantium fugiat. Ducimus neque fugiat voluptatibus ab. Excepturi autem soluta nisi iure dolor laboriosam! Sequi, obcaecati.</div>			
+			</div>
+		</div>
+
+			<button id="NextPie">Draw Pie</button>
+<!--			
+			<button id="NextBar">Draw bar</button>
+			<button id="NextStacked">Draw Stacked</button>
+			<button id="NextGauge">Draw Gauge</button>
+-->			
+		</section>
+		<section id="about">
+			<h1>About</h1>
+			<p><b>Research Paper review and citation</b><br>
+			With the number of social network users expected to increase to 2.44 billion by 2018, many companies have begun to measure the impact of social media advertisements. This paper uses predictive systems to predict the evolution of a post prior to its publication. Twelve FaceBook KPI's were selected to predict how posts would evolve, giving managers new insights into managerial decisions to improve brand recognition.
+
+			Citation:
+
+			S.Moro, et. al. "Predicting social media performance metrics and evaluation of the impact on brand building: A data mining approach", Journal of Business Research, 2016
+
+			</p>
+		</section>
+
+		</section>
+		<section id="Gallery">
+			<h1>Gallery</h1>
+			<p>Gallery Notes</p>
+		</section>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+  // Load the Visualization API and the corechart package.
+  google.charts.load('current', {'packages':['corechart']});
+
+
+
+
+var pieData = [
+["Link",	1613],
+["Photo",	77610],
+["Status",	7952],
+["Video",	1620]
+]
+
+// Set a callback to run when the Google Visualization API is loaded.
+ google.charts.setOnLoadCallback(drawChart);
+
+  // Callback that creates and populates a data table,
+  // instantiates the pie chart, passes in the data and
+  // draws it.
+
+var displayData = [
+ 	["Link",	1613],
+	["Photo",	77610],
+	["Status",	7952],
+	["Video",	1620]
+    ];
+
+ 
+  function drawChart(){
+  	drawPie(displayData);
+  	drawBar();
+  }
+
+
+
+  function drawPie(d) {
+    
+    // Create the data table.
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Type');
+    data.addColumn('number', 'Likes');
+    data.addRows(d);
+
+    // Set chart options
+    var options = {'title':'FaceBook Type by Likes Data',
+                   'width':400,
+                   'height':300};
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  };
+
+
+  function drawBar() {
+
+
+	
+//Row Labels	Sum of Lifetime Post Consumers
+//Link	6439
+//Photo	294124
+//Status	87730
+//Video	11093
+//(blank)	
+//Grand Total	399386
+
+
+
+    
+    // Create the data table.
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Type');
+    data.addColumn('number', 'Lifetime Post Consumers');
+    data.addRows([
+ //
+ 	["Link",	6439],
+	["Photo",	294124],
+	["Status",	87730],
+	["Video",	11093],
+    ]);
+
+    // Set chart options
+    var options = {'title':'FaceBook Type by Lifetime Post Consumers Data',
+					legend: { position: 'none' },
+               };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.BarChart(document.getElementById('bar_div'));
+    chart.draw(data, options);
+  }
+
+
+
+
+
+</script>
+
+
+
+	</body>
+</html>

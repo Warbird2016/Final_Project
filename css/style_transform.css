@@ -1,0 +1,85 @@
+.box {
+	height: 100px;
+	width: 100px;
+	background-color: pink;
+	margin: 10px;
+}
+
+#box1 {
+	transform: scale(0.5, 0.1);
+}
+
+#box2 {
+	transform: translate(5px,10px);
+}
+
+#box3 {
+	transform: rotate(-30deg);
+}
+
+#box4 {
+	transform: skewX(60deg);
+	transform: skewY(120deg);
+}
+
+#box5:hover {
+	width: 100%;
+	transition: width 20s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+#box6:hover {
+	width: 100%;
+	transition: width 20s linear;
+}
+
+
+#box7:hover {
+	background-color: powderblue;
+	transition: background-color 3s ease-in-out;
+}
+
+@keyframes moveAround {
+	0% { margin-left: 0px; margin-top: 0px;}
+	25% { margin-left: 50px; margin-top: 50px;}
+	50% { margin-left: 50px; margin-top: 150px;}
+	100% { margin-left: 200px; margin-top: 200px;}
+}
+
+.animation {
+	-webkit-animation-name: moveAround;
+	-webkit-animation-duration: 10s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-delay: 1s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-play-state: running;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
